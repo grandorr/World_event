@@ -1,41 +1,55 @@
-<div class="container">
+<div class="container bg-light ">
   <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md offset-md-1">
       <br><br><br>
       <%= form_tag url_for(controller: 'event',action: 'create', method: "post") do %>
 
         <h1 class="h3 mb-3 font-weight-normal text-center">Crée votre évènement</h1>
         <div class="form-group">
           <%= label_tag :title, "Titre" %>
-          <%= text_field_tag :title %>
+<br/>
+          <%= text_field_tag :title, @titre %>( 5 à 150 caractère)
         </div>
         <div class="form-group">
-          <%= label_tag :description, "Description de l'évènement" %><br />
-          <%= text_field_tag :description %>
+          <%= label_tag :description, "Description de l'évènement" %>
+<br/>
+          <%= text_field_tag :description %>    ( minimum 20 caractère )
         </div>
+  <br/>
         <div class="form-group">
           <%= label_tag :location, "Lieu de l'évènement" %><br />
+          <br/>
           <%= text_field_tag :location %>
         </div>
+  <br/>
         <div class="form-group">
-          <%= label_tag :price, "Prix " %>
+          <%= label_tag :price, "Prix  " %> ( entre 1 et 1000 )
+          <br/>
           <%= text_field_tag :price %>
+          euros
         </div>
+  <br/>
         <div class="form-group">
           <%= label_tag :price, "Début  " %>
+          <br/>
           <%= date_field_tag :start_date %>
         </div>
+  <br/>
         <div class="form-group">
           <%= label_tag :price, "A quel heure l'évènement commence?  " %>
+          <br/>
           <%= time_field_tag :hour_date  %>
         </div>
-
+<br/>
         <div class="form-group">
           <%= label_tag :end_date, "Fin  " %>
+          <br/>
           <%= date_field_tag :end_date %>
         </div>
+  <br/>
         <div class="form-group">
           <%= label_tag :price, "A quel heure l'évènement se finnis?  " %>
+          <br/>
           <%= time_field_tag :hour_end  %>
         </div>
 
