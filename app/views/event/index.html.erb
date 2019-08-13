@@ -3,13 +3,24 @@
 
         <% end %>
 
-<h1> VOILA LES EVENTS </h1>
+        <p><center><h3 ><strong> Vous voulez crée un évenement?</strong></h3> </center></p>
+            <center><h5 ><a class ="btn btn-dark btn-primary"  <%= link_to "Crée un évènement", new_event_path %> </a></h5></center>
+
+
+
+<div class="card-deck">
 <% @events.each do |event| %>
-<div class="  ">
-<br/>
-  <div class=" card text-white bg-dark   ">
-<%= event.title %>
+<div class="card ">
+  <img class="card-img-top" src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+  <div class="card-body ">
+    <h5 class="card-title"><%= event.title %></h5>
+    <p class="card-text"> Prix : <%= event.price %> euros </p>
+    <p class="card-text">Durée de l'évenement :<%= event.duration %> minute </p>
+    <p class="card-text"><small class="text-muted"><%= event.location %></small></p>
+  </div>
+</div>
+
+
+<% end %>
 
 </div>
-</div>
-<% end %>

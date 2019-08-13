@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br><br><br>
+      <%= form_tag url_for(controller: 'event',action: 'create', method: "post") do %>
+
+        <h1 class="h3 mb-3 font-weight-normal text-center">Crée votre évènement</h1>
+        <div class="form-group">
+          <%= label_tag :title, "Titre" %>
+          <%= text_field_tag :title %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :last_name, "Nom de famille" %><br />
+          <%= text_field_tag :last_name %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :email, "Email" %><br />
+          <%= text_field_tag :email %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :password %>
+
+
+    <br />
+          <%= text_field_tag :password %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :password_confirmation %><br />
+          <%= text_field_tag :password_confirmation %>
+        </div>
+        <div class="actions mt-5">
+          <%= submit_tag "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
