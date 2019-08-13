@@ -4,12 +4,41 @@
     <title>WorldEvent</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <a class=" text-white bg-dark "  <p> yo </p</a>
+
+  <div class="text-white dropdown navbar-nav ml-auto mr-5  ">
+
+
+
+      <% if user_signed_in? %>
+
+          <a class="dropdown-item text-white bg-dark"  <%= link_to "Sign out", destroy_user_session_path, method: :delete %> </a>
+
+
+
+
+
+        <a class="dropdown-item text-white bg-dark"     <%= link_to "Secret page", static_pages_secret_path %> </a>
+
+
+
+        <a class="dropdown-item text-white bg-dark"     <%= link_to "Edit email / password", edit_user_registration_path %> </a>
+
+
+      <% else %>
+      <a class="dropdown-item text-white bg-dark" <%= link_to "Crée un compte", '/users/sign_up' %></a>
+      <a class="dropdown-item text-white bg-dark" <%= link_to "Se connecter",'/users/sign_in' %></a>
+      <% end %>
+
+    </div></nav>
     <%= yield %>
   </body>
 </html>

@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.13)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -82,6 +83,16 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
+    devise (4.6.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (2.1.2)
@@ -118,6 +129,7 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    orm_adapter (0.5.0)
     pg (1.1.4)
     public_suffix (3.1.1)
     puma (3.12.1)
@@ -153,8 +165,10 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    responders (3.0.0)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     ruby_dep (1.5.0)
-    ruby_http_client (3.3.0)
     rubyzip (1.2.3)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -170,8 +184,6 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
-    sendgrid-ruby (6.0.0)
-      ruby_http_client (~> 3.3.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -194,6 +206,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -216,6 +230,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  devise
+  dotenv-rails
   faker
   jbuilder (~> 2.5)
   letter_opener
@@ -225,7 +241,6 @@ DEPENDENCIES
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
   selenium-webdriver
-  sendgrid-ruby
   spring
   spring-watcher-listen (~> 2.0.0)
   table_print
