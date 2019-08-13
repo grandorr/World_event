@@ -8,15 +8,17 @@
 
 
 
-<div class="card-deck">
+<div class="card-columns">
 <% @events.each do |event| %>
 <div class="card ">
-  <img class="card-img-top" src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
-  <div class="card-body ">
+  <img class="card-img-top  " src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+  <div class="card-body bg-light card-md ">
     <h5 class="card-title"><%= event.title %></h5>
     <p class="card-text"> Prix : <%= event.price %> euros </p>
-    <p class="card-text">Durée de l'évenement :<%= event.duration %> minute </p>
-    <p class="card-text"><small class="text-muted"><%= event.location %></small></p>
+    <p class="card-text"> <small class="text-muted"> Début de l'évènement : </small><%= event.start_date.day %> <%= event.start_date.strftime("%B") %>  <%= event.start_date.year %>  Début à   <%= event.start_date.hour %> h <%= event.start_date.strftime("%M")  %>  </p>
+<p class="card-text"><small class="text-muted"> Fin de l'évènement : </small>  <%= event.end_date.day %> <%= event.end_date.strftime("%B") %>  <%= event.end_date.year %>  Début à   <%= event.end_date.hour %> h <%= event.end_date.strftime("%M")  %>  </p>
+    <p class="card-text"><strong><%= event.location %></strong></p>
+    <a class ="card-text btn btn-dark btn-primary"  <%= link_to "Voir l'évènement", event_path(event.id) %> </a>
   </div>
 </div>
 

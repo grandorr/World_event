@@ -10,26 +10,38 @@
           <%= text_field_tag :title %>
         </div>
         <div class="form-group">
-          <%= label_tag :last_name, "Nom de famille" %><br />
-          <%= text_field_tag :last_name %>
+          <%= label_tag :description, "Description de l'évènement" %><br />
+          <%= text_field_tag :description %>
         </div>
         <div class="form-group">
-          <%= label_tag :email, "Email" %><br />
-          <%= text_field_tag :email %>
+          <%= label_tag :location, "Lieu de l'évènement" %><br />
+          <%= text_field_tag :location %>
         </div>
         <div class="form-group">
-          <%= label_tag :password %>
+          <%= label_tag :price, "Prix " %>
+          <%= text_field_tag :price %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :price, "Début  " %>
+          <%= date_field_tag :start_date %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :price, "A quel heure l'évènement commence?  " %>
+          <%= time_field_tag :hour_date  %>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :end_date, "Fin  " %>
+          <%= date_field_tag :end_date %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :price, "A quel heure l'évènement se finnis?  " %>
+          <%= time_field_tag :hour_end  %>
+        </div>
 
 
-    <br />
-          <%= text_field_tag :password %>
-        </div>
-        <div class="form-group">
-          <%= label_tag :password_confirmation %><br />
-          <%= text_field_tag :password_confirmation %>
-        </div>
         <div class="actions mt-5">
-          <%= submit_tag "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+          <%= submit_tag "Valider", class: "btn btn-lg btn-dark btn-block" %>
         </div>
       <% end %>
 

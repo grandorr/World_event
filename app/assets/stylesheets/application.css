@@ -13,3 +13,5 @@
  *= require_tree .
  *= require_self
  */
+ .card-img-top {
+ width: 60%;

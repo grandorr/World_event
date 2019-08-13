@@ -9,14 +9,14 @@ class Event < ApplicationRecord
 
 
 
-  validates :duration,
-  presence: true , numericality: { only_integer: true }, if:  :is_multiple_5?
+  #validates :duration,
+ #numericality: { only_integer: true }, if:  :is_multiple_5?
 
-  def is_multiple_5?
-  if self.duration % 5 != 0
-    errors.add(:duration, "La durée doit être un multiple de 5")
-  end
-  end
+  #def is_multiple_5?
+  #if self.duration % 5 != 0
+  #  errors.add(:duration, "La durée doit être un multiple de 5")
+  #end
+#  end
 
   validates :title,
   presence: true, length: { minimum: 5, maximum: 140 }
