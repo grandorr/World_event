@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+<center> <h1> Bonjour <%= current_user.first_name %> </h1> </center>
+
+        <% end %>
+
+<h1> VOILA LES EVENTS </h1>
+<% @events.each do |event| %>
+<div class="  ">
+<br/>
+  <div class=" card text-white bg-dark   ">
+<%= event.title %>
+
+</div>
+</div>
+<% end %>
