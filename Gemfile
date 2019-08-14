@@ -19,6 +19,7 @@ gem 'table_print'
 gem 'faker'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'stripe'
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

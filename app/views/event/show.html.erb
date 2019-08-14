@@ -10,7 +10,46 @@
     <h3>Prix : <%= @event.price %> € </h3>
     <h3>Nombre de participant : <%= @event.noob.count %> </h3>
     <h3><small>Créateur de l'évent  : <%= @event.administrator.first_name %></small> </h3>
-    <a href="#" class="btn btn-primary">Acheter un billet</a>
+<% if @event.administrator == current_user %>
+
+<% else %>
+ <% if @event.noob.include? current_user %>
+ <strong><h4 class='button btn-dark'> Vous êtes inscrit à l'évènement </h4></strong>
+ <% else %>
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Prix : <%= @event.price %> €</span>
+        </label>
+      </article>
+      <%= hidden_field_tag 'id', @event.id %>
+      <%= hidden_field_tag 'price', (@event.price * 100) %>
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Acheter un billet pour l'évènement"
+              data-amount="<%= @event.price * 100 %>"
+              data-currency="eur"
+              data-locale="auto"></script>
+    <% end %>
+<% end %>
+<% end %>
   </div>
 </div>
+<% if current_user == @event.administrator %>
+<h3> Liste des participant </h3>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <% @event.noob.each do |noob| %>
+    <li class="list-group-item"><%= noob.first_name %>  <%= noob.last_name %></li>
+      </ul>
+<% end %>
+
+</div>
+<% end %>
 </center>

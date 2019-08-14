@@ -19,6 +19,9 @@
 <p class="card-text"><small class="text-muted"> Fin de l'évènement : </small>  <%= event.end_date.day %> <%= event.end_date.strftime("%B") %>  <%= event.end_date.year %> Fin à   <%= event.end_date.hour %> h <%= event.end_date.strftime("%M")  %>  </p>
     <p class="card-text"><strong><%= event.location %></strong></p>
     <a class ="card-text btn btn-dark btn-primary"  <%= link_to "Voir l'évènement", event_path(event.id) %> </a>
+    <% if event.noob.include? current_user %>
+    <strong><small>       Vous participez à cet événement </small></strong>
+    <% end %>
   </div>
 </div>
 
