@@ -1,8 +1,16 @@
-<h1> <%= @event.title %> </h1>
-<h3> <%= @event.description %> </h3>
-<h3>Début à : <%= @event.start_date %> </h3>
-<h3>Fin à : <%= @event.end_date %> </h3>
-<h3>Lieu : <%= @event.location %> </h3>
-<h3>Prix : <%= @event.price %> </h3>
-<h3>Nombre de participant : <%= @event.noob.count %> </h3>
-<h3>Créateur de l'évent  : <%= @event.administrator.first_name %> </h3>
+<center><div class="bg-light" style="width: 80%;" >
+  <img class="card-img-top" src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><h1> <%= @event.title %> </h1></h5>
+    <h3 class="card-text"><h3> <%= @event.description %> </h3>
+    <h3>Début à : <%= @event.start_date %> </h3>
+    <h3>Fin à : <%= @event.end_date %> </h3>
+    <h3>Lieu : <%= @event.location %> </h3>
+    <br/>
+    <h3>Prix : <%= @event.price %> € </h3>
+    <h3>Nombre de participant : <%= @event.noob.count %> </h3>
+    <h3><small>Créateur de l'évent  : <%= @event.administrator.first_name %></small> </h3>
+    <a href="#" class="btn btn-primary">Acheter un billet</a>
+  </div>
+</div>
+</center>
