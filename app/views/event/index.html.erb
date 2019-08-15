@@ -11,7 +11,11 @@
 <div class="card-columns">
 <% @events.each do |event| %>
 <div class="card ">
-  <img class="card-img-top  " src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+  <% if event.avatar.attached? == false %>
+  <img class="card-img-top  "   src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+<% else %>
+  <center><img class="card-img-top " style="weight: 100%" <%= image_tag event.avatar, alt: 'avatar' %></center>
+  <% end %>
   <div class="card-body bg-light card-md ">
     <h5 class="card-title"><%= event.title %></h5>
     <p class="card-text"> Prix : <%= event.price %> euros </p>

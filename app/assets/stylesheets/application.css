@@ -14,5 +14,10 @@
  *= require_self
  */
  .card-img-top {
- width: 60%;
+ width: 100%;
+}
+
+.avatar-profile {
+width: 500 px;
+height: 1000 px;
 }

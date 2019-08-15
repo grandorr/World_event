@@ -1,5 +1,9 @@
 <center><div class="bg-light" style="width: 80%;" >
-  <img class="card-img-top" src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+  <% if @event.avatar.attached? == false %>
+  <img class="card-img-top  "  src="https://d.wildapricot.net/images/newsblog/bigstock-events-7444309.jpg" alt="Card image cap">
+<% else %>
+  <center><img class="card-img-top " <%= image_tag @event.avatar, alt: 'avatar' %></center>
+  <% end %>
   <div class="card-body">
     <h5 class="card-title"><h1> <%= @event.title %> </h1></h5>
     <h3 class="card-text"><h3> <%= @event.description %> </h3>

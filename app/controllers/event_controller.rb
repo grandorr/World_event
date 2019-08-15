@@ -19,6 +19,9 @@ end_date = (params[:end_date]+" "+params[:hour_end]+":00")
 
     @event = Event.create(start_date: start_date, end_date: end_date, title: params[:title], description: params[:description], location: params[:location], price: params[:price], administrator: current_user )
     if @event.save
+      if params[:avatar] != nil
+      @event.avatar.attach(params[:avatar])
+      end
     redirect_to event_path(@event.id)
     else
       flash.now[:notice] = "Vérifiez les informations que vous avez rentré, certaine ne rentre pas dans les critères. "

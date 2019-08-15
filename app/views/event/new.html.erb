@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md offset-md-1">
       <br><br><br>
-      <%= form_tag url_for(controller: 'event',action: 'create', method: "post") do %>
+      <%= form_tag url_for(controller: 'event',action: 'create', method: "post"), multipart: true do %>
 
         <h1 class="h3 mb-3 font-weight-normal text-center">Crée votre évènement</h1>
         <div class="form-group">
@@ -10,6 +10,11 @@
 <br/>
           <%= text_field_tag :title, @titre %>( 5 à 150 caractère)
         </div>
+
+
+        <%= file_field_tag :avatar %>
+
+
         <div class="form-group">
           <%= label_tag :description, "Description de l'évènement" %>
 <br/>
